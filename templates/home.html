@@ -10,5 +10,18 @@
 <button class="btn btn-primary">Learn More</button>
 <h2>Dynamics Section</h2>
 <h3>Current Time {{ current_time }}</h3>
+<form method="POST" action="{% url 'submit_form' %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
 
 {% endblock %}
