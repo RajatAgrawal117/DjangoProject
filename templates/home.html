@@ -3,25 +3,30 @@
 {% block title %}Welcome to My Website{% endblock %}
 
 {% block content %}
-<h1>Welcome to My Website</h1>
-<p class="lead">This is a simple page created for demonstration purposes.</p>
-<h2>Main Content Area</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis eget nunc lobortis mattis aliquam faucibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
-<button class="btn btn-primary">Learn More</button>
-<h2>Dynamics Section</h2>
-<h3>Current Time {{ current_time }}</h3>
-<form method="POST" action="{% url 'submit_form' %}">
-    {% csrf_token %}
-    <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name" name="name" required>
+<div class="text-center">
+    <h1 class="mb-4 fw-bold">Welcome to My Website</h1>
+    <p class="lead mb-5">This is a dynamic web page created for the ChainTech Internship purpose.</p>
+    <div class="alert alert-info">
+        <h2>Current Time: {{ current_time }}</h2>
     </div>
-    <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" class="form-control" id="email" name="email" required>
+
+    <!-- Dynamic Form to Submit Data -->
+    <div class="card shadow-sm mt-5">
+        <div class="card-body">
+            <h2 class="card-title">Submit Your Details</h2>
+            <form method="POST" action="{% url 'submit_form' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
+            </form>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-
+</div>
 {% endblock %}
