@@ -1,6 +1,14 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
+{% block title %}Welcome to My Website{% endblock %}
 
 {% block content %}
-<h2>This is the main content area.</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h1>Welcome to My Website</h1>
+<p class="lead">This is a simple page created for demonstration purposes.</p>
+<h2>Main Content Area</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis eget nunc lobortis mattis aliquam faucibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+<button class="btn btn-primary">Learn More</button>
+<h2>Dynamics Section</h2>
+<h3>Current Time {{ current_time }}</h3>
+
 {% endblock %}
